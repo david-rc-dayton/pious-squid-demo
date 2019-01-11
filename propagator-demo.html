@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+  <title>PiousSquid Propagator Demo</title>
+  <meta charset="UTF-8" />
+  <script src="js/ephemeris.js"></script>
+  <script src="lib/pious-squid.min.js"></script>
+  <script src="lib/plotly-latest.min.js"></script>
+</head>
+
+<style>
+  #plot,
+  #input-fields {
+    float: left;
+  }
+
+  #input-fields {
+    padding-top: 6em;
+    width: 200px;
+  }
+
+  #status-label {
+    margin-top: 25px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.75em;
+    text-align: center;
+    width: 95%;
+  }
+
+  #calc-button {
+    width: 95%;
+  }
+
+  .input-field {
+    margin-left: 4em;
+    width: 3em;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div id="plot" style="width:800px;height:600px;"></div>
+  <div id="input-fields" style="width:400px;">
+    <table style="width:100%;">
+      <tr>
+        <td>Step Size (sec):</td>
+        <td>
+          <input class="input-field" id="step-input" type="text" value="15" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Geopotential Degree:</td>
+        <td>
+          <input class="input-field" id="degree-input" type="text" value="0" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Geopotential Order:</td>
+        <td>
+          <input class="input-field" id="order-input" type="text" value="0" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Moon Gravity:</td>
+        <td><input class="input-field" id="moon-input" type="checkbox" /></td>
+      </tr>
+
+      <tr>
+        <td>Sun Gravity:</td>
+        <td><input class="input-field" id="sun-input" type="checkbox" /></td>
+      </tr>
+
+      <tr>
+        <td>Mass (kg):</td>
+        <td>
+          <input class="input-field" id="mass-input" type="text" value="2200" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Area (m&sup2;):</td>
+        <td>
+          <input class="input-field" id="area-input" type="text" value="3.7" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Atmospheric Drag:</td>
+        <td><input class="input-field" id="drag-input" type="checkbox" /></td>
+      </tr>
+
+      <tr>
+        <td>Solar Radiation Pressure:</td>
+        <td><input class="input-field" id="srp-input" type="checkbox" /></td>
+      </tr>
+      <tr>
+        <td>Keep Plot Trace:</td>
+        <td><input class="input-field" id="trace-input" type="checkbox" /></td>
+      </tr>
+    </table>
+
+    <button id="calc-button"><strong>PROPAGATE</strong></button>
+    <div id="status-label"></div>
+  </div>
+  <script src="js/propagator-demo.js" defer></script>
+</body>

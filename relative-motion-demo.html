@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <title>PiousSquid Relative Motion Demo</title>
+  <meta charset="UTF-8" />
+  <script src="js/ephemeris.js"></script>
+  <script src="lib/pious-squid.min.js"></script>
+  <script src="lib/plotly-latest.min.js"></script>
+</head>
+
+<style>
+  #plot,
+  #input-fields {
+    float: left;
+  }
+
+  #input-fields {
+    padding-top: 6em;
+    width: 300px;
+  }
+
+  input {
+    width: 100%;
+  }
+</style>
+
+<body>
+  <div id="plot" style="width:800px;height:600px;"></div>
+
+  <div id="input-fields">
+    <div>
+      <p>Semi-Major Axis: <label id="sma-value">+0</label> km</p>
+      <input type="range" min="-100" max="100" value="0" id="sma-slider" />
+    </div>
+
+    <div>
+      <p>Eccentricity: <label id="ecc-value">+0</label></p>
+      <input type="range" min="-100" max="100" value="0" id="ecc-slider" />
+    </div>
+
+    <div>
+      <p>Inclination: <label id="inc-value">+0</label>&deg;</p>
+      <input type="range" min="-100" max="100" value="0" id="inc-slider" />
+    </div>
+
+    <div>
+      <p>Right-Ascension: <label id="ra-value">+0</label>&deg;</p>
+      <input type="range" min="-100" max="100" value="0" id="ra-slider" />
+    </div>
+
+    <div>
+      <p>Argument of Perigee: <label id="ap-value">+0</label>&deg;</p>
+      <input type="range" min="-100" max="100" value="0" id="ap-slider" />
+    </div>
+
+    <div>
+      <p>True Anomaly: <label id="ta-value">+0</label>&deg;</p>
+      <input type="range" min="-100" max="100" value="0" id="ta-slider" />
+    </div>
+  </div>
+  <script src="js/relative-motion-demo.js" defer></script>
+</body>
